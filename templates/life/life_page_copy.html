@@ -1,0 +1,634 @@
+{% extends 'web_base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}?version=0.0.0.6">
+    <link rel="stylesheet" href="{% static 'css/life/life_page.css' %}?version=0.0.2.5">
+    {#    <link rel="stylesheet" href="{% static 'css/element-ui@2.13.1/lib/theme-chalk/index.css' %}">#}
+
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+{#    <script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}?version=0.0.4"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/json.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>#}
+    <script type="text/javascript" src="{% static 'js/life/life.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'js/npm/element-ui@2.13.1/lib/index.js' %}?version=0.0.2"></script>#}
+
+
+{% endblock %}
+
+{#不继承滚动轮播图#}
+{% block banner %}
+{% endblock %}
+
+
+{% block body %}
+    <div class="app_content">
+        <div class="modal__navigation">
+            <div id="modal__back" class="modal__back">
+                <span><svg viewBox="0 0 2.2 2.1"><polygon
+                        points="2.2 0.92 0.46 0.92 1.22 0.16 1.05 0 0.16 0.89 0.16 0.89 0 1.05 0 1.05 0 1.05 0.16 1.22 0.16 1.22 1.05 2.1 1.22 1.94 0.45 1.17 2.2 1.17 2.2 0.92"/></svg></span>
+            </div>
+        </div>
+        <div id="modals_wrapper" class="modals__wrapper">
+            <h2 class="title">记录点滴生活</h2>
+{#            <h3 class="subTitle">Recently played or added</h3>#}
+{#            <br>#}
+            <div class="modal__wrapper modal__wrapper-deactive" data-modal="modal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <img class="life_infos_img" src="https://images.bwwstatic.com/columnpic7/251F87B24-9B38-F302-A06E587B27D2B94E.jpg" style="height: 400px"/>
+                    </div>
+                    <div class="modal__content-preview">
+                        <h1 class="title">Welcome To Your Life</h1>
+                        <h3 class="artist">Grouplove</h3>
+                    </div>
+                    <div class="modal__content-full">
+{#                        <div class="modal__play"></div>#}
+                        <h1 class="title">Welcome To Your Life</h1>
+                        <h3 class="artist">Grouplove</h3>
+                        <div class="songs__wrapper">
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Welcome To Your Life</h1>
+                                    <h3 class="song__duration">3:48</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__wrapper modal__wrapper-deactive" data-modal="modal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <img class="life_infos_img" src="https://upload.wikimedia.org/wikipedia/en/9/9c/Blink-182_-_Calfornia.jpg" style="height: 400px"/>
+                    </div>
+                    <div class="modal__content-preview">
+                        <h1 class="title">California</h1>
+                        <h3 class="artist">blink-182</h3>
+                    </div>
+                    <div class="modal__content-full">
+                        <div class="modal__play"></div>
+                        <h1 class="title">California</h1>
+                        <h3 class="artist">blink-182</h3>
+                        <div class="songs__wrapper">
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Cynical</h1>
+                                    <h3 class="song__duration">1:55</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Bored to Death</h1>
+                                    <h3 class="song__duration">4:55</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">She's Out Of Her Mind</h1>
+                                    <h3 class="song__duration">2:42</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Los Angeles</h1>
+                                    <h3 class="song__duration">3:03</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Sober</h1>
+                                    <h3 class="song__duration">2:59</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>6</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Built This Pool</h1>
+                                    <h3 class="song__duration">0:16</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>7</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">No Future</h1>
+                                    <h3 class="song__duration">3:45</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>8</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Home Is Such A Lonely Place</h1>
+                                    <h3 class="song__duration">3:21</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>9</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Kings Of the Weekend</h1>
+                                    <h3 class="song__duration">2:56</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>10</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Teenage Satellites</h1>
+                                    <h3 class="song__duration">3:11</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>11</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Left Alone</h1>
+                                    <h3 class="song__duration">3:09</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>12</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Rabbit Hole</h1>
+                                    <h3 class="song__duration">2:35</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>13</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">San Diego</h1>
+                                    <h3 class="song__duration">3:12</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>14</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">The Only Thing That Matter</h1>
+                                    <h3 class="song__duration">1:57</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>15</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">California</h1>
+                                    <h3 class="song__duration">3:10</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>16</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Brohemian Rhapsody</h1>
+                                    <h3 class="song__duration">0:30</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__wrapper modal__wrapper-deactive" data-modal="modal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <img class="life_infos_img" src="https://images.genius.com/0fb5fdd2b6fa7fe99d2958a3006fa8df.1000x1000x1.jpg" style="height: 400px"/>
+                    </div>
+                    <div class="modal__content-preview">
+                        <h1 class="title">Sincerely</h1>
+                        <h3 class="artist">Stephen</h3>
+                    </div>
+                    <div class="modal__content-full">
+                        <div class="modal__play"></div>
+                        <h1 class="title">Sincerely</h1>
+                        <h3 class="artist">Stephen</h3>
+                        <div class="songs__wrapper">
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Start a Fire (feat. IN-Q)</h1>
+                                    <h3 class="song__duration">2:27</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Your Life</h1>
+                                    <h3 class="song__duration">4:06</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Remembering Myself</h1>
+                                    <h3 class="song__duration">3:30</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Line It Up</h1>
+                                    <h3 class="song__duration">3:27</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Fly Down</h1>
+                                    <h3 class="song__duration">3:17</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>6</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Solid as a Stone</h1>
+                                    <h3 class="song__duration">2:41</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>7</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Outro</h1>
+                                    <h3 class="song__duration">2:05</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>8</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Mr. Man</h1>
+                                    <h3 class="song__duration">4:04</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>9</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Crossfire</h1>
+                                    <h3 class="song__duration">4:30</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>10</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Sincerely</h1>
+                                    <h3 class="song__duration">4:47</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__wrapper modal__wrapper-deactive" data-modal="modal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <img class="life_infos_img" src="{% static 'img/home/godzilla.jpg' %}" style="height: 400px"/>
+                    </div>
+                    <div class="modal__content-preview">
+                        <h1 class="title">Run</h1>
+                        <h3 class="artist">AWOLNATION</h3>
+                    </div>
+                    <div class="modal__content-full">
+                        <div class="modal__play"></div>
+                        <h1 class="title">Run</h1>
+                        <h3 class="artist">AWOLNATION</h3>
+                        <div class="songs__wrapper">
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Run</h1>
+                                    <h3 class="song__duration">4:01</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Fat Face</h1>
+                                    <h3 class="song__duration">3:33</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Hollow Moon (Bad Wolf)</h1>
+                                    <h3 class="song__duration">4:18</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Jailbreak</h1>
+                                    <h3 class="song__duration">4:41</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Kookseverywhere!!!</h1>
+                                    <h3 class="song__duration">4:07</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>6</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">I Am</h1>
+                                    <h3 class="song__duration">4:34</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>7</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Headrest for My Soul</h1>
+                                    <h3 class="song__duration">2:08</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>8</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Dreamers</h1>
+                                    <h3 class="song__duration">2:25</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>9</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Windows</h1>
+                                    <h3 class="song__duration">3:37</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>10</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Holy Roller</h1>
+                                    <h3 class="song__duration">3:58</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>11</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Woman Woman</h1>
+                                    <h3 class="song__duration">3:38</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>12</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Lie Love Live Love</h1>
+                                    <h3 class="song__duration">4:41</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>13</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Like People, Like Plastic</h1>
+                                    <h3 class="song__duration">4:31</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>14</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Drinking Lightening</h1>
+                                    <h3 class="song__duration">5:08</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__wrapper modal__wrapper-deactive" data-modal="modal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <img class="life_infos_img" src="{% static 'img/home/gojira.jpg' %}" style="height: 400px"/>
+                    </div>
+                    <div class="modal__content-preview">
+                        <h1 class="title">Need To Know</h1>
+                        <h3 class="artist">PRIORY</h3>
+                    </div>
+                    <div class="modal__content-full">
+                        <div class="modal__play"></div>
+                        <h1 class="title">Need To Know</h1>
+                        <h3 class="artist">PRIORY</h3>
+                        <div class="songs__wrapper">
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Call To Arms</h1>
+                                    <h3 class="song__duration">3:08</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Put 'Em Up</h1>
+                                    <h3 class="song__duration">3:36</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Weekend</h1>
+                                    <h3 class="song__duration">4:01</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Friends & Demons</h1>
+                                    <h3 class="song__duration">3:11</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Lost Gold</h1>
+                                    <h3 class="song__duration">3:53</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>6</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">New Thing</h1>
+                                    <h3 class="song__duration">3:11</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>7</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Paper Tiger</h1>
+                                    <h3 class="song__duration">3:49</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>8</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Big Love</h1>
+                                    <h3 class="song__duration">3:24</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>9</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Need To Know</h1>
+                                    <h3 class="song__duration">3:09</h3>
+                                </div>
+                            </div>
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>10</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Mother Mary</h1>
+                                    <h3 class="song__duration">3:09</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__wrapper modal__wrapper-deactive" data-modal="modal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <img class="life_infos_img" src="https://s.mxmcdn.net/images-storage/albums4/0/1/0/0/7/2/33270010_350_350.jpg" style="height: 400px"/>
+                    </div>
+                    <div class="modal__content-preview">
+                        <h1 class="title">Painting Greys</h1>
+                        <h3 class="artist">Emmit Fenn</h3>
+                    </div>
+                    <div class="modal__content-full">
+                        <div class="modal__play"></div>
+                        <h1 class="title">Painting Greys</h1>
+                        <h3 class="artist">Emmit Fenn</h3>
+                        <div class="songs__wrapper">
+                            <div class="song__wrapper">
+                                <div class="song__number">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="song__content">
+                                    <h1 class="song__title">Painting Greys</h1>
+                                    <h3 class="song__duration">3:47</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{#不继承滚动轮播图#}
+{% block footer %}
+    {{ block.super }}
+{% endblock %}
+
+
+{#不继承侧边跳链#}
+{% block jump %}
+{% endblock %}
+
+
+

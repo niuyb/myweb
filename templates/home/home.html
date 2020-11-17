@@ -1,0 +1,454 @@
+﻿{% extends 'web_base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}?version=0.0.0.2">
+    <link rel="stylesheet" href="{% static 'css/home/water_fall.css' %}?version=0.0.0.2">
+{#    <link rel="stylesheet" href="{% static 'css/home/style.css' %}?version=0.0.0.2">#}
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}?version=0.0.2"></script>
+    <script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/home/home.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/respond.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/json.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/home/waterfall.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/home/home_data.js' %}?version=0.0.6"></script>
+
+{% endblock %}
+
+{% block body %}
+
+{#    继承web_base_banner#}
+
+
+{#<!--web-content---------------------------------------------------------------------------------------------->#}
+    <div id="section2" init="true" class="section section2">
+      <div class="wrap">
+        <div class="home_title">
+          <a href="" target="_blank">
+            <img src="{% static 'img/home/title_content.jpg' %}" width="262" height="78" alt="网站内容" />
+          </a>
+        </div>
+        <div class="service_text">
+{#       在此处填写文字在此处填写文字在此处填写文字   #}
+        </div>
+        <div class="serve_column">
+          <ul class="fix">
+            <li class="c1">
+              <dl>
+                <dt class="pic">
+                  <a href="" target="_blank">
+                    <img src="{% static 'img/home/movie_ex.png' %}"  alt="电影评价" width="270" height="200" />
+                  </a>
+                </dt>
+                <dt class="t">
+                  <a href=""  target="_blank">
+                    电影评价
+                  </a>
+                </dt>
+                <dd>
+                  无论是爆米花电影还是令人深思,引发共鸣的电影
+                </dd>
+                <dd>
+                  你都可以在这里找到一丝踪迹,
+                </dd>
+                <dd>
+                  一起夸赞一起吐槽一起架构起属于自己的精神世界
+                </dd>
+                <dd>
+                  时刻关注当下最引人注目的作品
+                </dd>
+              </dl>
+            </li>
+            <li class="c2">
+              <dl>
+                <dt class="pic">
+                    <a href="/picture"><img src="{%  static 'img/home/img_ex.png' %}" alt="商城网站开发" width="270" height="200" /></a>
+                </dt>
+                <dt class="t">
+                  <a rel="noFollow" target="_blank">
+                    图片分享
+                  </a>
+                </dt>
+                <dd>
+                  飒爽的风景,孤美的夜景,与可爱的美人儿
+                </dd>
+                <dd>
+                  这里是我喜欢的所有图片,安利给你
+                </dd>
+                <dd>
+                  当然都是高清图啊,难道我会拿像素低的图
+                </dd>
+                <dd>
+                  来忽悠你么?
+                </dd>
+              </dl>
+            </li>
+            <li class="c3">
+              <dl>
+                <dt class="pic">
+                  <a href="" >
+                    <img src="{% static 'img/home/tools_ex.png' %}" alt="手机微信网站建设" width="270" height="200" />
+                  </a>
+                </dt>
+                <dt class="t">
+                  <a href="" >
+                    工具推荐
+                  </a>
+                </dt>
+                <dd>
+                  分享各类有关的工具软件,亲测可用
+                </dd>
+                <dd>
+                  拿走之后希望你可以用他们创造出更好的东西
+                </dd>
+                <dd>
+                  如果有不懂的可以来投稿区私信作者哇,你也可
+                </dd>
+                <dd>
+                  以推荐更好用的软件给我哦
+                </dd>
+              </dl>
+            </li>
+            <li class="c4">
+              <dl>
+                <dt class="pic">
+                  <a href="">
+                    <img src="{% static 'img/home/up_ex.png' %}" alt="解决方案" width="270" height="200" />
+                  </a>
+                </dt>
+                <dt class="t">
+                  <a href="">
+                    投稿
+                  </a>
+                </dt>
+                <dd>
+                  电影,图片,工具统统来者不拒,只要是好看,好用
+                </dd>
+                <dd>
+                  都会在网站上展现出来
+                </dd>
+                <dd>
+                  不仅仅是以上类别,你有一些反馈的信息也可以在
+                </dd>
+                <dd>
+                  这里发信息哦
+                </dd>
+              </dl>
+            </li>
+          </ul>
+          <div class="c">
+          </div>
+        </div>
+      </div>
+      <div class="service_foot">
+       我们从这里就开始吧
+      </div>
+    </div>
+
+{#<!--movies-sharing------------------------------------------------------------------------------------------------>#}
+    <div id="section4" init="false" class="section section4">
+      <div class="home_solutions">
+        <div class="home_solutions_title">
+          <a href="" tppabs="#" target="_blank">
+            <img src="{% static 'img/home/title_movie_sharing.jpg' %}" alt="电影分享" width="311" height="82" />
+          </a>
+        </div>
+        <div class="home_solutions_text">
+            我的目标是做出一个家庭影院式的点播环境,与你一起分享各种优秀电影
+        </div>
+        <img src="{% static 'img/home/movies_back.jpg' %}" style="position: absolute; z-index: -1;width: 100%;left: 0;opacity: 0.2">
+          {#        <div class="home_solutions_list wrap"  style="background:url('{% static 'img/home/movies_back.jpg' %}') no-repeat ; width: 100%;left: 0">#}
+        <div class="home_solutions_list wrap">
+          <div id="movies" class="home_solutions_list_inner">
+              <template v-for="value in movies_data">
+                  <dl :class="value.class_name">
+                  <dt>
+                    <img class="movies_img" :src="value.movies"/>
+                  </dt>
+                  <dd class="t">
+                      <a>[[value.title]]</a>
+                  </dd>
+                  <dd class="spec">
+                      [[value.content]]
+                  </dd>
+                  <dd class="bg">
+                  </dd>
+                </dl>
+              </template>
+          </div>
+        </div>
+{#        </div>#}
+        <div class="btn_solutions_more">
+          <a href="" tppabs="#" title="电影更多" class="btn">
+            查看更多
+          </a>
+        </div>
+{#        <div class="service_foot">#}
+    {#       在此处填写文字在此处填写文字在此处填写文字   #}
+{#          </div>#}
+      </div>
+    </div>
+
+{#<!-- img ------------------------------------------------------------------------------------------------>#}
+    <div id="section3" init="false" class="section section3">
+      <div class="succeed">
+        <div class="succeed_title">
+          <a href="#" >
+            <img src="{% static 'img/home/title_img.png' %}" alt="图库" width="311" height="82" />
+          </a>
+        </div>
+        <div class="success_text">
+          欢迎来一起分享自己最喜欢的图片
+          <br />
+        </div>
+      </div>
+        <br/><br/>
+{#      <img src="{% static 'img/home/movies_back.jpg' %}" style="position: absolute; z-index: -1;width: 100%;left: 0;opacity: 0.2">#}
+      <ul id="waterfall"></ul>
+
+      <div class="btn_cases_more">
+        <a href="/picture" title="图库更多" class="btn">
+          查看更多
+        </a>
+      </div>
+{#      <div class="service_foot">#}
+{#       在此处填写文字在此处填写文字在此处填写文字   #}
+{#      </div>#}
+    </div>
+
+{#<!--tools---------------------------------------------------------------------------------------------->#}
+    <div id="section2" init="true" class="section section2">
+      <div class="solution" style="">
+        <div class="home_title">
+          <a href="" target="_blank">
+            <img src="{% static 'img/home/title_tools.jpg' %}" width="311" height="82" alt="工具推荐" />
+          </a>
+        </div>
+        <div class="service_text">实用的工具,有趣的插件,来这里就对了!</div>
+        <div id="tools" class="solution_list">
+            <ul class="fix">
+                <template v-for="value in tools_data">
+                  <li>
+                    <div class="solu_img">
+                      <a href="#" class="shade">
+                      </a>
+                      <div class="img_icon">
+                        <a href="#" >
+                          <img src="{% static 'img/home/download.png' %}" alt="下载" width="40" height="40" />
+                        </a>
+                      </div>
+                      <img :src="value.tools" width="370" height="120" />
+                    </div>
+                    <h2>
+                      <a href="#">
+                        [[value.title]]
+                      </a>
+                    </h2>
+                    <p class="intro">
+                      <a href="#" >
+                        [[value.content]]
+                      </a>
+                    </p>
+                  </li>
+                </template>
+            </ul>
+          </div>
+    </div>
+      <div class="btn_cases_more">
+        <a href="" title="工具分享" class="btn">
+          查看更多
+        </a>
+      </div>
+{#      <div class="service_foot">#}
+{#       在此处填写文字在此处填写文字在此处填写文字   #}
+{#      </div>#}
+    </div>
+
+{#<!--upload-- ------------------------------------------------------------------------------------------------>#}
+    <div id="section6" init="false" class="section section6">
+  <div class="home_partner">
+    <div class="home_partner_title">
+      <a href="news/index.html"  target="_blank">
+        <img src="{% static "img/home/title_contribution.png" %}" alt="投稿专区" width="311" height="82" />
+      </a>
+    </div>
+    <div class="home_partner_text">
+          欢迎你来投稿哦
+    </div>
+    <div class="home_partner_list wrap">
+      <table>
+        <tr>
+        </tr>
+        <tr>
+          <td>
+            <div class="pic partner_box">
+              <div class="cont1">
+                <a>
+                <img src="{% static  'img/home/up_movies.jpg' %}"
+                width="150" height="100" alt="投稿电影" />
+                </a>
+              </div>
+              <div class="cont2">
+                <a>
+                <img src="{% static  'img/home/up_movies_b.jpg' %}"
+                width="150" height="100" alt="投稿电影" />
+                </a>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="pic partner_box">
+              <div class="cont1">
+                <a>
+                <img src="{% static  'img/home/up_img.jpg' %}"
+                width="150" height="100" alt="投稿图片" />
+                </a>
+              </div>
+              <div class="cont2">
+                <a>
+                <img src="{% static  'img/home/up_img_b.jpg' %}"
+                width="150" height="100" alt="投稿图片" />  `
+                </a>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="pic partner_box">
+              <div class="cont1">
+                <a>
+                <img src="{% static  'img/home/up_tools.jpg' %}"
+                width="150" height="100" alt="投稿工具" />
+                </a>
+              </div>
+              <div class="cont2">
+                <a>
+                <img src="{% static  'img/home/up_tools_b.jpg' %}"
+                width="150" height="100" alt="投稿工具" />
+                </a>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="pic partner_box">
+              <div class="cont1">
+                <img src="{% static  'img/home/up_life.jpg' %}"
+                width="150" height="100" alt="投稿生活" />
+                </a>
+              </div>
+              <div class="cont2">
+                <img src="{% static  'img/home/up_life_b.jpg' %}"
+                width="150" height="100" alt="投稿生活" />
+                </a>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="pic partner_box">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="pic partner_box">
+            </div>
+          </td>
+          <td>
+            <div class="pic partner_box">
+            </div>
+          </td>
+          <td>
+            <div class="pic partner_box">
+            </div>
+          </td>
+          <td>
+            <div class="pic partner_box">
+            </div>
+          </td>
+          <td>
+            <div class="pic partner_box">
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+{#  <div class="service_foot">#}
+{#       在此处填写文字在此处填写文字在此处填写文字   #}
+{#  </div>#}
+</div>
+
+{#<!--life------------------------------------------------------------------------------------------------->#}
+    <div id="section5" init="false" class="section section5">
+      <div class="home_news">
+        <div class="home_news_title">
+          <a href="#" tppabs="#" target="_blank">
+            <img src="{% static "img/home/title_life_sharing.jpg"  %}" alt="生活分享" width="311" height="82" />
+          </a>
+        </div>
+        <div class="home_news_text">
+            这是我的生活,你的哪?
+        </div>
+        <div class="home_news_list">
+          <div class="wrap">
+            <div id="life" class="home_news_list_inner">
+                <template v-for="value in life_data_up">
+                  <div class="home_news_item">
+                    <dl>
+                      <img :src="value.life" alt="" style="height: 200px;max-width: 300px"/>
+                      <dt>
+                        [[value.date]]
+                      </dt>
+                      <dd class="t">
+                        <a href="#" tppabs="#" target="_blank">
+                            [[value.title]]
+                        </a>
+                      </dd>
+                      <dd class="spec">
+                        <a href="#" tppabs="#">
+                            [[value.content]]
+                        </a>
+                      </dd>
+                    </dl>
+                  </div>
+                </template>
+                <div class="c"></div>
+                <template v-for="value in life_data_down">
+                  <div class="home_news_item">
+                    <dl>
+                      <img :src="value.life" alt="" style="height: 200px;max-width: 300px"/>
+                      <dt>
+                        [[value.date]]
+                      </dt>
+                      <dd class="t">
+                        <a href="#" tppabs="#" target="_blank">
+                            [[value.title]]
+                        </a>
+                      </dd>
+                      <dd class="spec">
+                        <a href="#" tppabs="#">
+                            [[value.content]]
+                        </a>
+                      </dd>
+                    </dl>
+                  </div>
+                </template>
+                <div class="c"></div>
+            </div>
+            <div class="btn_news_more">
+              <a href="news/index.html" title="分享生活"
+              class="btn">
+                查看更多
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

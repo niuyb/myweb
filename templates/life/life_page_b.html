@@ -1,0 +1,353 @@
+{% extends 'web_base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}?version=0.0.2.0">
+    <link rel="stylesheet" href="{% static 'css/life/life.css' %}?version=0.0.0.6">
+    <link rel="stylesheet" href="{% static 'css/element-ui@2.13.1/lib/theme-chalk/index.css' %}">
+
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}?version=0.0.4"></script>
+    <script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/json.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/life/life_page.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/npm/element-ui@2.13.1/lib/index.js' %}?version=0.0.2"></script>
+
+
+{% endblock %}
+
+{#不继承滚动轮播图#}
+{% block banner %}
+{% endblock %}
+
+
+{% block body %}
+<div class="service_foot" style="height: 20px">
+        寻找你记忆中的样子
+</div>
+<div class="body-wrapper">
+    <div class="wrapper">
+        <div class="header">
+            <div class="tray">
+                <div class="tray-btns">
+{#                    寻找你记忆中的样子#}
+                    <div class="exit-btn"></div>
+                    <div class="big-btn"></div>
+                    <div class="small-btn"></div>
+                    <div class="clear-fix"></div>
+                </div>
+                <div class="logo"></div>
+            </div>
+            <div class="info">
+                <div class="username"></div>
+                <div class="search">
+                    <input type="text" placeholder="在这里寻找" />
+                </div>
+                <div class="view">
+                    <img src="{% static 'img/life/search.png' %}" style="width: 20px; position: relative; left: -20%">
+{#                    <div class="name">View</div>#}
+{#                    <div class="value">#}
+{#                        <input type="checkbox" id="check" class="view-input" />#}
+{#                        <div class="show">#}
+{#                            <div class="item">Card</div>#}
+{#                            <div class="item">Grid</div>#}
+{#                        </div>#}
+{#                        <label for="check" class="view-label">#}
+{#                            <div class="view-btn">Card</div>#}
+{#                        </label>#}
+{#                    </div>#}
+{#                    <div class="clear-fix"></div>#}
+                </div>
+                <div class="sort">
+                    <div class="name">Sort</div>
+                    <div class="value">
+                        <input type="checkbox" id="check2" class="sort-input" />
+                        <div class="show">
+                            <div class="item">Name</div>
+                            <div class="item">Date</div>
+                        </div>
+                        <label for="check2" class="sort-label">
+                            <div class="sort-btn">aaa</div>
+                        </label>
+                    </div>
+                    <div class="clear-fix"></div>
+                </div>
+                <div class="options"></div>
+                <div class="clear-fix"></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="arrows">
+                <div class="left-arrow">
+                    <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="#cfd8dc" d="M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z"></path>
+                    </svg>
+                </div>
+                <div class="right-arrow">
+                    <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="#cfd8dc" d="M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z"></path>
+                    </svg>
+                </div>
+                <div class="clear-fix"></div>
+            </div>
+            <div class="card left l4">
+                <div style="background-image: url('/uploads/161001/normal1.jpg')" class="avatar"></div>
+                <div class="info">
+                    <div class="name">Dan Jordan</div>
+                    <div class="status">Status: At work</div>
+                </div>
+                <div class="missed-msg">
+                    <div class="num">
+                        <div class="value">2020-10-11</div>
+                    </div>
+                    <div class="desc">
+                        Hey Dude
+                        <br> How it's going ?
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+{#                        <div class="clear-fix"></div>#}
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="last-seen">14:50:56 pm</div>
+                    <div class="options"></div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+            <div class="card left l3">
+                <div style="background-image: url('/uploads/161001/normal2.jpg')" class="avatar"></div>
+                <div class="info">
+                    <div class="name">Dan Jordan</div>
+                    <div class="status">Status: At work</div>
+                </div>
+                <div class="missed-msg">
+                    <div class="num">
+                        <div class="value">100</div>
+                    </div>
+                    <div class="desc">
+                        Hey Dude
+                        <br> How it's going ?
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="last-seen">Last seen at 2:00 am</div>
+                    <div class="options"></div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+            <div class="card left l2">
+                <div style="background-image: url('/uploads/161001/normal3.jpg')" class="avatar"></div>
+                <div class="info">
+                    <div class="name">Dan Jordan</div>
+                    <div class="status">Status: At work</div>
+                </div>
+                <div class="missed-msg">
+                    <div class="num">
+                        <div class="value">100</div>
+                    </div>
+                    <div class="desc">
+                        Hey Dude
+                        <br> How it's going ?
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="last-seen">Last seen at 2:00 am</div>
+                    <div class="options"></div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+            <div class="card left l1">
+                <div style="background-image: url('/uploads/161001/normal4.jpg')" class="avatar"></div>
+                <div class="info">
+                    <div class="name">Dan Jordan</div>
+                    <div class="status">Status: At work</div>
+                </div>
+                <div class="missed-msg">
+                    <div class="num">
+                        <div class="value">100</div>
+                    </div>
+                    <div class="desc">
+                        Hey Dude
+                        <br> How it's going ?
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="last-seen">Last seen at 2:00 am</div>
+                    <div class="options"></div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+            <div class="card active">
+{#                <div class="life_img" style="background-image: url({% static "img/home/godzilla.jpg"%})" class="avatar"></div>#}
+                <img class="life_img" src="{% static "img/home/banner_tree.jpg"%}">
+                <div class="info">
+                    <div class="name">第一次使用测试</div>
+                    <div class="status">作者: Ksar4</div>
+                </div>
+                <div class="missed-msg">
+                    <div class="num">
+                        <div class="value">2020-10-11</div>
+                    </div>
+                    <div class="desc">
+                        1500字高中生作文大全对于高中生来说，1500字的作文是有点多了，但是偶尔写写也是不错的。下面是给大
+                        家整理的1500字高中生作文，供大家参阅! “最初的梦想紧握在手上，想要去的地方，怎么能在半路就放。”不
+                        知哪里响起了这熟悉的调子，不禁让我想起了我那最初的梦想，我的那个简单而又美妙的“小梦想”。第一次滋生
+                        出梦想这个概念，是在我很年幼的时候。那天，我丢了一枝新买的钢笔，我伏在案头哭了很久很久，泪水打湿我的
+                        脸颊却仍然无法让我的钢笔重新回到的我那画着粉红色小白兔的文具盒里。于是，我人生的第一个梦想由此诞生;
+                        ;长大后我会有许多支钢笔，全都挤在我那小小的文具盒里，一根也不会丢。那时的我，曾为这个小小的梦想而
+                        努力过。后来，我长大了一些，不再会因丢了钢笔而哭泣，也渐渐将那个梦想的贝壳从记忆的海潮中不断向边
+                        缘拍打，直到落在在了岁月的沙滩上，在夕阳余晖的照应下，被海水慢慢遗忘。直到上小学五年级时，我生了一
+                        场重病，在家休息了进半个月。在那段时光里，我被病痛折磨得体无完肤，被药片的苦涩味道刺激得呕吐不止，
+                        被打点滴的无趣心酸摧残得心如止水。因为这场病，母亲请了两个星期的假，而父亲也是每天上晚班后早早地往
+                        回家赶，本来就辛苦的他们不但要占用许多时间来陪我，还要陪我度过这半个月与
+                                                1500字高中生作文大全对于高中生来说，1500字的作文是有点多了，但是偶尔写写也是不错的。下面是给大
+                        家整理的1500字高中生作文，供大家参阅! “最初的梦想紧握在手上，想要去的地方，怎么能在半路就放。”不
+                        知哪里响起了这熟悉的调子，不禁让我想起了我那最初的梦想，我的那个简单而又美妙的“小梦想”。第一次滋生
+                        出梦想这个概念，是在我很年幼的时候。那天，我丢了一枝新买的钢笔，我伏在案头哭了很久很久，泪水打湿我的
+                        脸颊却仍然无法让我的钢笔重新回到的我那画着粉红色小白兔的文具盒里。于是，我人生的第一个梦想由此诞生;
+                        ;长大后我会有许多支钢笔，全都挤在我那小小的文具盒
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="last-seen">发布于 下午 14:50:56 </div>
+                    <div class="options"></div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+            <div class="card right l1">
+                <div style="background-image: url('/uploads/161001/normal2.jpg')" class="avatar"></div>
+                <div class="info">
+                    <div class="name">Dan Jordan</div>
+                    <div class="status">Status: At work</div>
+                </div>
+                <div class="missed-msg">
+                    <div class="num">
+                        <div class="value">100</div>
+                    </div>
+                    <div class="desc">
+                        Hey Dude
+                        <br> How it's going ?
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="last-seen">Last seen at 2:00 am</div>
+                    <div class="options"></div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+            <div class="card right l2">
+                <div style="background-image: url('/uploads/161001/normal3.jpg')" class="avatar"></div>
+                <div class="info">
+                    <div class="name">Dan Jordan</div>
+                    <div class="status">Status: At work</div>
+                </div>
+                <div class="missed-msg">
+                    <div class="num">
+                        <div class="value">100</div>
+                    </div>
+                    <div class="desc">
+                        Hey Dude
+                        <br> How it's going ?
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="last-seen">Last seen at 2:00 am</div>
+                    <div class="options"></div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+            <div class="card right l3">
+                <div style="background-image: url('/uploads/161001/normal2.jpg')" class="avatar"></div>
+                <div class="info">
+                    <div class="name">Dan Jordan</div>
+                    <div class="status">Status: At work</div>
+                </div>
+                <div class="missed-msg">
+                    <div class="num">
+                        <div class="value">100</div>
+                    </div>
+                    <div class="desc">
+                        Hey Dude
+                        <br> How it's going ?
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="last-seen">Last seen at 2:00 am</div>
+                    <div class="options"></div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+            <div class="card right l4">
+                <div style="background-image: url('/uploads/161001/normal1.jpg')" class="avatar"></div>
+                <div class="info">
+                    <div class="name">Dan Jordan</div>
+                    <div class="status">Status: At work</div>
+                </div>
+                <div class="missed-msg">
+                    <div class="num">
+                        <div class="value">100</div>
+                    </div>
+                    <div class="desc">
+                        Hey Dude
+                        <br> How it's going ?
+                        <br> I need your help in something Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <div class="clear-fix"></div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="last-seen">Last seen at 2:00 am</div>
+                    <div class="options"></div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{#不继承滚动轮播图#}
+{% block footer %}
+    {{ block.super }}
+{% endblock %}
+
+
+{#不继承侧边跳链#}
+{% block jump %}
+{% endblock %}
+
+
+

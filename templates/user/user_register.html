@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/user/style.css' %}?version=0.0.5">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}?version=0.0.5"></script>
+    <script type="text/javascript" src="{% static 'js/axios.min.js' %}?version=0.0.5"></script>
+    <script type="text/javascript" src="{% static 'js/user/script.js' %}?version=0.0.5"></script>
+    <script type="text/javascript" src="{% static 'js/user/user.js' %}?version=0.0.6"></script>
+{% endblock %}
+
+
+{% block content %}
+    {#    css#}
+    <style>
+        body{
+           background-image: url("{% static "img/user/user_back.jpg" %}");
+        }
+    </style>
+{#    <video id="bg_video" autoplay loop preload="auto" src="{% static "img\user\my_world.mp4" %}"></video>#}
+    <body id="body">
+        <div class="login_left"><img id="img_left" src="{% static  "img/user/img2.png" %}" style="display: block"> </div>
+        <div class="main">
+          <div class="container b-container is-z200" id="a-container">
+            <div class="form" id="a-form">
+              <h2 class="form_title title">用户注册</h2>
+              <div class="form__icons"><img class="form__icon" src="{% static "img/user/facebook_icon.svg" %}" alt=""><img class="form__icon" src="{% static "img/user/twitter_icon.svg" %}"></div><span class="form__span">or use email for registration</span>
+              <input name="username" class="form__input"  placeholder="姓名">
+              <input name="email" class="form__input"  placeholder="邮箱">
+              <input name="password" class="form__input"  placeholder="密码" autocomplete="off">
+              <input name="confirm_password" class="form__input" placeholder="确认密码" autocomplete="off">
+              <button class="form__button button" id="register_btn">注册</button>
+            </div>
+          </div>
+          <div class="container a-container " id="b-container">
+            <div class="form" id="b-form">
+              <h2 class="form_title title">用户登录</h2>
+              <div class="form__icons"><img class="form__icon" src="{% static "img/user/in_icon.svg" %}"></div><span class="form__span">或者使用 电话 登录</span>
+              <input name="username" class="form__input"  placeholder="邮箱">
+              <input name="password" class="form__input"  placeholder="密码" autocomplete="off"><a class="form__link">忘记密码?</a>
+              <button class="form__button button" id="login_btn">登录</button>
+            </div>
+          </div>
+          <div class="switch is " id="switch-cnt">
+            <div class="switch__circle"></div>
+            <div class="switch__circle switch__circle--t is-txr" ></div>
+            <div class="switch__container "  id="switch-c2">
+              <h2 class="switch__title title">欢迎回来 !</h2>
+              <p class="switch__description description"> 在这里登录,让更多人看到你的世界,分享你的喜悦! 也让我为你提供更多的便利</p>
+              <button class="switch__button button switch-btn" >登录</button>
+            </div>
+            <div class="switch__container is-hidden" id="switch-c1">
+              <h2 class="switch__title title">你好,新同学 !</h2>
+              <p class="switch__description description">在这里注册一个属于你的新账号,来分享属于你自己的世界! 也让我提供给你更多的小惊喜</p>
+              <button class="switch__button button switch-btn">注册</button>
+            </div>
+          </div>
+        </div>
+        <div class="login_right"><img id="img_right" src="{% static  "img/user/img1.png" %}" style="display: none"> </div>
+    </body>
+{#    js#}
+{% endblock %}
+

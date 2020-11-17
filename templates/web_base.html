@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+{#    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}">#}
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+{#    <script type="text/javascript" src="{% static 'js/home/home.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/respond.min.js' %}"></script>#}
+{% endblock %}
+
+{% block content %}
+  <body>
+{#<!--题头------------------------------------------------------------------------------------------------->#}
+    <div id="section1" init="true" class="section section1">
+      <header class="header">
+        <div class="wrap">
+          <h1 class="fl">
+            <a href=""  class="fl logo">
+              <img src="{% static 'img/home/logo.jpg' %}"
+              alt="Ksar4 web" width="154" height="49" />
+            </a>
+          </h1>
+          <div class="fl logo_text">
+            <img src="{% static 'img/home/logo_text.jpg' %}"
+            alt="improve skills" width="163" height="49" />
+          </div>
+          <div class="fr">
+            <div class="top">
+             <span>|</span>
+             <a></a>
+              <span>
+                作者邮箱:
+              </span>
+              <a>
+                <span class="email">
+                </span>
+                niuybKsar4@163.com
+              </a><a>|</a>
+              <a class="ewm">
+                <span class="weixin">
+                </span>
+                作者微信
+                <img src={% static 'img/home/my_weixin.jpg' %} width="258" height="258" alt="Ksar4微信" style="width:258px;height:258px;" />
+              </a>
+              <a>
+                <span></span>             |
+              </a>
+            </div>
+            <nav class="nav">
+              <ul class="fix">
+                <li id="menu1">
+                  <a href="">
+                    电影评价
+                  </a>
+                </li>
+                <li id="menu2">
+                  <a href="">
+                    图片分享
+                  </a>
+                </li>
+                <li id="menu3">
+                  <a href="">
+                    工具推荐
+                  </a>
+                </li>
+                <li id="menu4">
+                  <a href="">
+                    投稿区
+                  </a>
+                </li>
+                <li id="menu5">
+                  <a href="">
+                    建设日记
+                  </a>
+                </li>
+                <li id="menu6">
+                  <a href="">
+                    关于我?
+                  </a>
+                </li>
+
+              </ul>
+              <span class="nav_icon">
+              </span>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <script type="text/javascript">
+        document.getElementById("menu1").className = "on";
+      </script>
+
+{#<!--banner------------------------------------------------------------------------------------------------>#}
+    {% block banner %}
+    <div id="banner" class="banner" style="background-color: #D3D3D3">
+        <ul class="pic" id="pic">
+            <template v-for="value in banner_data">
+              <li>
+                  <a title="" href="" ><img :src="value.contents"></a>
+              </li>
+            </template>
+{#          <li style="background-image:url({% static 'img/home/banner_leaf.jpg' %})">#}
+{#            <a title="" href="" ></a>#}
+{#          </li>#}
+{#          <li style="background-image:url({% static 'img/home/banner_light.jpg' %})">#}
+{#            <a title="" href="" ></a>#}
+{#          </li>#}
+{#          <li style="background-image:url({% static 'img/home/banner_tree.jpg' %})">#}
+{#            <a title="" href="" ></a>#}
+{#          </li>#}
+        </ul>
+        <ul class="list" id="list_pic">
+          <li class="on">
+          </li>
+          <li>
+          </li>
+          <li>
+          </li>
+          <li>
+          </li>
+        </ul>
+      </div>
+    {% endblock %}
+{#<!--内容------------------------------------------------------------------------------------------------->#}
+
+{% block body %}
+{% endblock %}
+
+</div>
+{% block footer %}
+{#<!--底边栏------------------------------------------------------------------------------------------------->#}
+    <footer class="footer " >
+        <div class="contact">
+          <div class="wrap">
+            <div class="home_about fl">
+              <dl>
+                <dt>
+                  <a href="index.html">
+                    作者深情自述
+                  </a>
+                </dt>
+                <dd>
+                  本站所有资源均为免费，其中不涉及任何收费行为，如果你觉得对你有帮助的话可以悄悄私信鼓励一下作者，建立本网站的初衷其实是为了提升自己的技术，也是为了实现自己的承诺，如果你也对建站有兴趣并且有着持续的动力，欢迎联系我，一起完善这个小破站，本站是由个人完成开发，平时需要工作并没有做太多测试，如果发现bug的话请邮箱联系我，谢谢！
+                </dd>
+                <dd>
+                  <a href="index.html"  class="more">
+                    马上去夸赞作者 >>
+                  </a>
+                </dd>
+              </dl>
+            </div>
+            <div class="home_service fl">
+              <h2>
+                <a href="#" tppabs="#">
+                  网站内容范围
+                </a>
+              </h2>
+              <a class="sub" href="#" tppabs="#">
+                电影评价
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                图片分享
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                工具推荐
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                投稿区
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                瓜皮的日常
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                作者要装杯
+              </a>
+            </div>
+            <div class="home_contact fl" style="width: 200px">
+              <h2>
+                <a href="../contact/index.html" tppabs="#">
+                  &nbsp;&nbsp;&nbsp;&nbsp;   联系作者本作
+                </a>
+              </h2>
+              <ul>
+                <li>
+                  </i>
+                </li>
+                <li>
+                  <i class="weibo">
+                  </i>
+                  Q Q：
+                  <a target="_blank" rel="nofollow" href="#">
+                    740055936
+                  </a>
+                </li>
+                <li>
+                  <i class="email">
+                  </i>
+                  邮 箱：
+                  <a target="_blank" rel="nofollow" href="mailto:798099554@qq.com">
+                    niuybKsar4@163.com
+                  </a>
+                </li>
+                <li>
+                  <i class="call">
+                  </i>
+                  电 话：想call我？没门！
+                </li>
+                <li>
+                  <i class="weixin">
+                  </i>
+                  <a href="../contact/pay.html" tppabs="../contact/pay.html">
+                    打赏方式：朕不稀罕你的臭钱
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="blogroll">
+          <div class="wrap">
+            友情挂名：
+            <a href="#" target="_blank">
+              萍儿人
+            </a>
+            <a href="#" target="_blank">
+              小花旦
+            </a>
+            <a href="#" target="_blank">
+              试毒爱妃
+            </a>
+            <a href="#" target="_blank">
+              小胆子翠萍
+            </a>
+            &nbsp;
+            <p class="copyright">
+              @2020-2999 版权所有 Ksar4 ICP备6666666号
+            </p>
+          </div>
+        </div>
+  </footer>
+{% endblock %}
+
+{#<!--侧边跳页------------------------------------------------------------------------------------------------->#}
+{% block jump %}
+    <div class="right" id="fp-nav">
+      <ul>
+        <li>
+          <a class="active" index="0">
+            <span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a index="1">
+            <span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a index="2">
+            <span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a index="3">
+            <span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a index="4">
+            <span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a index="5">
+            <span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+{% endblock %}
+
+{% endblock %}
+
+
+<style>
+
+    .top .call{background: url({% static 'img/home/sprite.png' %}) no-repeat 0 0;display:inline-block;width:20px;height:16px;vertical-align:bottom;margin-right:4px;}
+    .top .email{display:inline-block;width:18px;height:16px;background:url({% static 'img/home/sprite.png' %}) no-repeat -20px 0;vertical-align:bottom;margin-right:4px;}
+    .top .weixin{display:inline-block;width:18px;height:16px;background:url({% static 'img/home/sprite.png' %}) no-repeat -60px 0;vertical-align:bottom;margin-right:4px;}
+
+
+
+    {#    footer#}
+    .home_contact li .addres{background: url({% static 'img/home/sprite.png' %}) no-repeat 0 -20px  ;}
+    .home_contact li .weibo{background: url({% static 'img/home/sprite.png' %}) no-repeat -20px -20px  ;}
+    .home_contact li .email{background: url({% static 'img/home/sprite.png' %}) no-repeat -40px -20px  ;}
+    .home_contact li .weixin{background: url({% static 'img/home/sprite.png' %}) no-repeat -80px -20px  ;}
+    .home_contact li .call{background: url({% static 'img/home/sprite.png' %}) no-repeat -0px -0px  ;}
+
+</style>
+

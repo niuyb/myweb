@@ -1,0 +1,350 @@
+{% extends 'web_base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/common/message_box.css' %}?version=0.0.0.5">
+    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}?version=0.0.1.3">
+    <link rel="stylesheet" href="{% static 'css/tools/tools_top.css' %}?version=0.0.0.9">
+    <link rel="stylesheet" href="{% static 'css/tools/tools.css' %}?version=0.0.0.9">
+    <link rel="stylesheet" href="{% static 'css/element-ui@2.13.1/lib/theme-chalk/index.css' %}">
+
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}?version=0.0.5"></script>
+    <script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/json.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/home/home.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/npm/element-ui@2.13.1/lib/index.js' %}?version=0.0.2"></script>
+    <script type="text/javascript" src="{% static 'js/tools/tools_top_d3.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'js/tools/tools_top.js' %}?version=0.0.2"></script>#}
+    <script type="text/javascript" src="{% static 'js/pagination.js' %}?version=0.0.2"></script>
+    <script type="text/javascript" src="{% static 'js/tools/tools.js' %}?version=0.0.7"></script>
+{#    <script type="text/javascript" src="{% static 'js/common/message_box.js' %}?version=0.0.6"></script>#}
+
+{% endblock %}
+{% block content %}
+  <body>
+{#<!--题头------------------------------------------------------------------------------------------------->#}
+    <div id="section1" init="true" class="section section1" style="height:1450px">
+      <header class="header">
+        <div class="wrap">
+          <h1 class="fl">
+            <a href=""  class="fl logo">
+              <img src="{% static 'img/home/logo.jpg' %}"
+              alt="Ksar4 web" width="154" height="49" />
+            </a>
+          </h1>
+          <div class="fl logo_text">
+            <img src="{% static 'img/home/logo_text.jpg' %}"
+            alt="improve skills" width="163" height="49" />
+          </div>
+          <div class="fr">
+            <div class="top">
+             <span>|</span>
+             <a></a>
+              <span>
+                作者邮箱:
+              </span>
+              <a>
+                <span class="email">
+                </span>
+                niuybKsar4@163.com
+              </a><a>|</a>
+              <a class="ewm">
+                <span class="weixin">
+                </span>
+                作者微信
+                <img src={% static 'img/home/my_weixin.jpg' %} width="258" height="258" alt="Ksar4微信" style="width:258px;height:258px;" />
+              </a>
+              <a>
+                <span></span>             |
+              </a>
+            </div>
+            <nav class="nav">
+              <ul class="fix">
+                <li id="menu1">
+                  <a href="">
+                    电影评价
+                  </a>
+                </li>
+                <li id="menu2">
+                  <a href="">
+                    图片分享
+                  </a>
+                </li>
+                <li id="menu3">
+                  <a href="">
+                    工具推荐
+                  </a>
+                </li>
+                <li id="menu4">
+                  <a href="">
+                    投稿区
+                  </a>
+                </li>
+                <li id="menu5">
+                  <a href="">
+                    建设日记
+                  </a>
+                </li>
+                <li id="menu6">
+                  <a href="">
+                    关于我?
+                  </a>
+                </li>
+
+              </ul>
+              <span class="nav_icon">
+              </span>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <script type="text/javascript">
+        document.getElementById("menu1").className = "on";
+      </script>
+
+{#<!--banner------------------------------------------------------------------------------------------------>#}
+    {% block banner %}
+    {% endblock %}
+{#<!--内容------------------------------------------------------------------------------------------------->#}
+
+{% block body %}
+
+    <div class="service_foot" style="height: 20px"></div>
+
+    <div id="tools" style="max-height: 900px">
+        <div v-if="top_show === 1" class="tools_section section--results">
+            <div id="section_inner" class="section__inner">
+                <h2 class="candidate__name" style="font-size: 2.3rem">工具top榜单</h2><br/>
+                <div id="results" v-html="res_innner"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <template v-for="value in page_tools_data">
+                <div class="card-media" @click="tools_detail($event)" name="123123">
+                    {#                    <!-- media container -->#}
+                    <div class="card-media-object-container">
+                        <div class="card-media-object" style=""><img :src="value.img_url"
+                                                                     style="height:200px;max-width: 245px; float: left">
+                        </div>
+                        <span class="card-media-object-tag subtle">[[value.file_type]]</span>
+                        <ul class="card-media-object-social-list">
+                            <li>
+                                <img src="{% static "img/tools/download.png" %}">
+                            </li>
+                            <li>
+                                <img src="{% static "img/tools/like.png" %}">
+                            </li>
+                            {#                        <li class="card-media-object-social-list-item-additional">#}
+                            {#                            <span>+2222222</span>#}
+                            {#                        </li>#}
+                        </ul>
+                    </div>
+                    {#                    <!-- body container -->#}
+                    <div class="card-media-body">
+                        <div class="card-media-body-top">
+                            <span class="subtle">[[value.name]]</span>
+                        </div>
+                        <span class="card-media-body-heading">[[value.content]]</span>
+                        <div class="card-media-body-supporting-bottom">
+                        <span class="card-media-body-supporting-bottom-text subtle">
+                            下载次数:[[value.download_times]]
+                        </span>
+                            <span class="card-media-body-supporting-bottom-text subtle u-float-right">上传时间:<a>[[value.upload_date]]</a></span>
+                        </div>
+                        <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
+                            <span class="card-media-body-supporting-bottom-text subtle">#[[value.tools_type]]</span>
+{#                            <a href="#" class="card-media-body-supporting-bottom-text card-media-link u-float-right">点击查看详情</a>#}
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+
+            <template>
+                <el-form
+                        type="primary"
+                        @click="open_loading"
+                        v-loading.fullscreen.lock="tools_loading">
+                </el-form>
+            </template>
+
+
+            <template>
+                <div class="block">
+                    <el-pagination
+                            background
+                            :page-size="5"
+                            :pager-count="7"
+                            layout="prev, pager, next"
+                            :total="page_total"
+                            @current-change="handleCurrentChange"
+                            :current-page="currentPage"
+                    >
+                    </el-pagination>
+                </div>
+            </template>
+
+
+            <div style="height: 100px"></div>
+        </div>
+
+        <div class="modal" @click="close_detail" style="z-index: 10">
+            <div class="modal-container" @click.stop>
+                <div class="modal-left">
+                    <h1 class="modal-title">[[detail_data.title]]</h1>
+                    <p class="modal-desc">[[detail_data.version]]</p>
+                    <img :src="detail_data.img"
+                         style="position:relative;float:right;top:-20%; height: 150px;">
+                    <div class="input-block" style="width: 80%;height: 35%;">
+
+                        <label for="email" class="input-label">工具介绍</label>
+                        <p>[[detail_data.content]]</p>
+    {#                    <input type="email" name="email" id="email" placeholder="Email">#}
+                    </div>
+                    <div class="input-block" style="width: 80%;height: 35%;">
+                        <label for="password" class="input-label">使用方式</label>
+                        <p>[[detail_data.method]]</p>
+                    </div>
+                    <div class="modal-buttons">
+                        <a href="" class="">更新时间:[[detail_data.update]]</a>
+                        <button class="input-button" @click="tools_download">下载</button>
+                    </div>
+                </div>
+                <button class="icon-button close-button">
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
+
+</div>
+{% block footer %}
+{#<!--底边栏------------------------------------------------------------------------------------------------->#}
+    <footer class="footer " >
+        <div class="contact">
+          <div class="wrap">
+            <div class="home_about fl">
+              <dl>
+                <dt>
+                  <a href="index.html">
+                    作者深情自述
+                  </a>
+                </dt>
+                <dd>
+                  本站所有资源均为免费，其中不涉及任何收费行为，如果你觉得对你有帮助的话可以悄悄私信鼓励一下作者，建立本网站的初衷其实是为了提升自己的技术，也是为了实现自己的承诺，如果你也对建站有兴趣并且有着持续的动力，欢迎联系我，一起完善这个小破站，本站是由个人完成开发，平时需要工作并没有做太多测试，如果发现bug的话请邮箱联系我，谢谢！
+                </dd>
+                <dd>
+                  <a href="index.html"  class="more">
+                    马上去夸赞作者 >>
+                  </a>
+                </dd>
+              </dl>
+            </div>
+            <div class="home_service fl">
+              <h2>
+                <a href="#" tppabs="#">
+                  网站内容范围
+                </a>
+              </h2>
+              <a class="sub" href="#" tppabs="#">
+                电影评价
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                图片分享
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                工具推荐
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                投稿区
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                瓜皮的日常
+              </a>
+              <a class="sub" href="#" tppabs="#">
+                作者要装杯
+              </a>
+            </div>
+            <div class="home_contact fl" style="width: 200px">
+              <h2>
+                <a href="../contact/index.html" tppabs="#">
+                  &nbsp;&nbsp;&nbsp;&nbsp;   联系作者本作
+                </a>
+              </h2>
+              <ul>
+                <li>
+                  </i>
+                </li>
+                <li>
+                  <i class="weibo">
+                  </i>
+                  Q Q：
+                  <a target="_blank" rel="nofollow" href="#">
+                    740055936
+                  </a>
+                </li>
+                <li>
+                  <i class="email">
+                  </i>
+                  邮 箱：
+                  <a target="_blank" rel="nofollow" href="mailto:798099554@qq.com">
+                    niuybKsar4@163.com
+                  </a>
+                </li>
+                <li>
+                  <i class="call">
+                  </i>
+                  电 话：想call我？没门！
+                </li>
+                <li>
+                  <i class="weixin">
+                  </i>
+                  <a href="../contact/pay.html" tppabs="../contact/pay.html">
+                    打赏方式：朕不稀罕你的臭钱
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="blogroll">
+          <div class="wrap">
+            友情挂名：
+            <a href="#" target="_blank">
+              萍儿人
+            </a>
+            <a href="#" target="_blank">
+              小花旦
+            </a>
+            <a href="#" target="_blank">
+              试毒爱妃
+            </a>
+            <a href="#" target="_blank">
+              小胆子翠萍
+            </a>
+            &nbsp;
+            <p class="copyright">
+              @2020-2999 版权所有 Ksar4 ICP备6666666号
+            </p>
+          </div>
+        </div>
+  </footer>
+{% endblock %}
+
+{#<!--侧边跳页------------------------------------------------------------------------------------------------->#}
+{% block jump %}
+{% endblock %}
+
+{% endblock %}
+
