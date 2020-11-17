@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+
+<link rel="stylesheet" href="{% static 'css/element-ui@2.13.1/lib/theme-chalk/index.css' %}">
+<script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}"></script>
+<script type="text/javascript" src="{% static 'js/npm/element-ui@2.13.1/lib/index.js' %}"></script>
+
+
+<div  id="app" class="tag-group">
+    <el-tag type="info">标签三</el-tag>
+  <span class="tag-group__title">Dark</span>
+  <el-tag
+    v-for="item in items"
+    :key="item.label"
+    :type="item.type"
+    effect="dark" class="" style="margin: 10px">
+    [[ item.label ]]
+  </el-tag>
+</div>
+
+<script>
+{#function Picture_per(){#}
+    new Vue({
+        el: "#app",
+        delimiters: ["[[", "]]"],
+         data() {
+          return {
+            items: [
+              { type: '', label: '标签一' },
+              { type: 'success', label: '标签二' },
+              { type: 'info', label: '标签三' },
+              { type: 'danger', label: '标签四' },
+              { type: 'warning', label: '标签五' }
+            ]
+          }
+        },
+        methods: {
+
+        }
+    });
+{#}#}
+</script>
+
+
+
+
+
+
+</body>
+</html>

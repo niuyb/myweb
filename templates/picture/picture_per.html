@@ -1,0 +1,220 @@
+{% extends 'web_base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/element-ui@2.13.1/lib/theme-chalk/index.css' %}">
+    {#    <link rel="stylesheet" href="{% static 'css/home/water_fall.css' %}?version=0.0.0.2">#}
+    <link rel="stylesheet" href="{% static 'css/picture/picture_b.css' %}?version=0.0.0.7">
+    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}?version=0.0.0.3">
+
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}"></script>
+    <script type="text/javascript" src="{% static 'js/npm/element-ui@2.13.1/lib/index.js' %}?version=0.0.2"></script>
+    <script type="text/javascript" src="{% static 'js/pictrue/pictrue_data.js' %}?version=0.0.6"></script>
+{% endblock %}
+{#不继承滚动轮播图#}
+{% block banner %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="no-js">
+        <header class='hero'>
+            <div class='hero__background'>
+                <img src="{% static 'img/home/banner_light.jpg' %}" style="width: 100%;height: 550px">
+            </div>
+            <div class='hero__footer'>
+                <div class='hero__footer__item'></div>
+                <div class='hero__footer__item hero__footer__item--align-right'>
+                    <a>
+                        {#图片小注释：Ksar4#}
+                    </a>
+                </div>
+            </div>
+            <section class='hero__content hero__content--centered'>
+                <h1 class='hero__title'>开始,在这里寻找深得你心的瞬间</h1>
+                <div class='hero__search-container'>
+                    <form class='js-search-bar search-bar search-bar--jumbo' method='get' role='search'>
+                        <div class='search-bar__container'>
+                            <input id='search' name='s' placeholder='搜索图片' required='required' type='search' value=''>
+                            <button id='search-action' title='搜索'>
+                                <i class='rd__svg-icon'><img src="{% static 'img/picture/search.png' %}"></i>
+                            </button>
+                        </div>
+                        <div class='js-search-bar-dropdown'></div>
+                    </form>
+                    <div class='hero__search-container__search-tags'>
+                        <ul class='hero__search-container__search-tags__tag-container'>
+                            <li class='hero__search-container__search-tags__tag-container__suggested'>
+                                推荐<span>:</span></li>
+                            <li>
+                                <ul>
+                                    <li class='hero__search-container__search-tags__tag-container__tag'>
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            在家工作
+                                        </a>
+                                    </li>
+                                    <li class='hero__search-container__search-tags__tag-container__tag'>
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            網路
+                                        </a>
+                                    </li>
+                                    <li class='hero__search-container__search-tags__tag-container__tag'>
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            浴室
+                                        </a>
+                                    </li>
+                                    <li class='hero__search-container__search-tags__tag-container__tag'>
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            運送
+                                        </a>
+                                    </li>
+                                    <li class='hero__search-container__search-tags__tag-container__tag'>
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            更多
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <div class='underlined-tabs underlined-tabs--large underlined-tabs--centered underlined-tabs--shadow'>
+            <a class="underlined-tabs__tab underlined-tabs__tab--active" href="/zh-cn/">主页</a>
+            <a class="underlined-tabs__tab" href="/zh-cn/discover/">发现</a>
+            <a class="underlined-tabs__tab" href="/zh-cn/videos/">视频</a>
+            <a class="underlined-tabs__tab " href="/zh-cn/leaderboard/">热门作者排行榜</a>
+            <a class="underlined-tabs__tab" href="/zh-cn/challenges/">挑战赛</a>
+        </div>
+
+        <div style="height: 100px">
+
+        </div>
+        <div class='l-container home-page'>
+
+            <div class='photos '>
+                <div class="per_img">
+                    <img class="per" alt="图片标题" src="{% static 'img/home/banner_sea.jpg' %}"/>
+                </div>
+            </div>
+
+            <div style="height: 30px"></div>
+            <div  id="img_label" class="tag-group" style="display: -webkit-flex;-webkit-justify-content: center;-webkit-align-items: center; ">
+                  <el-tag type="info" size="medium">图片标签</el-tag>
+                  <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                  <el-tag
+                    v-for="item in items"
+                    :key="item.label"
+                    :type="item.type"
+                    effect="dark"
+                    size="medium"
+                    style="margin: 7px">
+                    &nbsp [[ item.label ]] &nbsp
+                  </el-tag>
+                </div>
+            <div>
+                {#                <img class="per" src="{% static "img/picture/download_per.png" %}" style="position: absolute;left: 48%">#}
+                <div class="news_list">
+                    <ul>
+                        <li>
+                            <div class="news_time fl">
+                                <span class="day">
+                                  11
+                                </span>
+                                <span class="year">
+                                  2020-10
+                                </span>
+                                <span class="author">
+{#                                  更新时间#}
+                                </span>
+                                <span class="type">
+                      <a href="#" tppabs="#" target="_blank">
+                        更新时间
+                      </a>
+                    </span>
+                            </div>
+                            <div class="news_cont fr">
+                                <h2>
+                                    <a href="#" tppabs="#" target="_blank">
+                                        图片信息
+                                    </a>
+                                </h2>
+                                <p class="demo">
+                                    <a href="#" tppabs="#" target="_blank">
+                                        存储大小:  1.22 MB   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 分辨率:  385 X 250 <br/>
+                                        拍摄时间:  2015-10-11 11:06 <br/>
+                                        软件:  Adobe Photoshop Lightroom Classic 8.1 (Windows) <br/>
+                                    </a>
+                                </p>
+                                <p class="vis">
+                                    <a href="#" class="more btn">
+                                        下载 >>
+                                    </a>
+                                    浏览次数：2 &nbsp;&nbsp;
+                                    <a>
+{#                                        网站建设#}
+                                    </a>
+                                    &nbsp; &nbsp;
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <style type="text/css">
+        .per_img {
+            width: 100%;
+        {#height:100%;#} display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        {#border:1px solid #000;#}
+        }
+
+        .per {
+            max-width: 1200px;
+            max-height: 1200px;
+        }
+
+.news_list{width: 1200px;margin: 0 auto;overflow:hidden;}
+.news_list li{background: #f7f7f7;zoom:1;margin-top: 40px;position: relative;}
+.news_list .line{display: block;position: absolute;background: #2eafbb;}
+.news_list li:after{content: "";clear: both;display: table;}
+
+.news_time{background: #2eafbb;width: 120px;height: 100%;padding: 18px 20px 40px 0;}
+.news_time .day{display: block;font-size: 70px;color: #fff;font-family: "Impact";text-align: right;}
+.news_time .year{display: block;color: #eee;text-align: right;line-height: 22px;}
+.news_time .author{display: block;color: #eee;text-align: right;line-height: 22px;}
+.news_time .type{display: block;text-align: right;background: url("{% static  "img/picture/n01.jpg" %}") no-repeat right top;padding-top: 6px;margin-top: 4px;}
+.news_time .type a{color: #fff;font-family: '宋体', Arial;}
+
+.news_cont{width: 980px;margin-right: 40px;}
+.news_cont h2{font-size: 20px;font-weight: normal;padding-top: 26px;}
+.news_cont h2 a{color: #333;}
+.news_cont a:hover{color: #2eafbb;}
+.news_cont .demo{line-height: 24px;margin-top: 14px;}
+.news_cont .vis{color: #999;line-height: 38px;margin-top: 12px;}
+.news_cont .more{float: right;color: #2eafbb;display: inline-block;border: 1px solid #2eafbb;line-height: 38px;padding: 0 24px;}
+
+
+.fl{float:left;}
+
+
+
+    </style>
+
+{% endblock %}
+
+{#不继承侧边跳链#}
+{% block jump %}
+{% endblock %}

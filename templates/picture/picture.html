@@ -1,0 +1,144 @@
+{% extends 'web_base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+        <link rel="stylesheet" href="{% static 'css/home/water_fall.css' %}?version=0.0.0.2">
+    <link rel="stylesheet" href="{% static 'css/picture/picture_b.css' %}?version=0.0.0.4">
+    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}?version=0.0.0.2">
+
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+        <script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}?version=0.0.1"></script>
+        <script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>
+    {#    <script type="text/javascript" src="{% static 'js/home/home.js' %}"></script>#}
+{#        <script type="text/javascript" src="{% static 'js/respond.min.js' %}"></script>#}
+        <script type="text/javascript" src="{% static 'js/json.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/home/waterfall.js' %}"></script>
+{#        <script type="text/javascript" src="{% static 'js/home/home_data.js' %}?version=0.0.6"></script>#}
+{% endblock %}
+{#不继承滚动轮播图#}
+{% block banner %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="no-js">
+        <header class='hero'>
+            <div class='hero__background'>
+                <img src="{% static 'img/home/banner_light.jpg' %}" style="width: 100%;height: 550px">
+            </div>
+            <div class='hero__footer'>
+                <div class='hero__footer__item'></div>
+                <div class='hero__footer__item hero__footer__item--align-right'>
+                    <a>
+                        {#图片小注释：Ksar4#}
+                    </a>
+                </div>
+            </div>
+            <section class='hero__content hero__content--centered'>
+                <h1 class='hero__title'>开始,在这里寻找深得你心的瞬间</h1>
+                <div class='hero__search-container'>
+                    <form class='js-search-bar search-bar search-bar--jumbo' method='get' role='search'>
+                        <div class='search-bar__container'>
+                            <input id='search' name='s' placeholder='搜索图片' required='required' type='search' value=''>
+                            <button id='search-action' title='搜索'>
+                                <i class='rd__svg-icon'><img src="{% static 'img/picture/search.png' %}"></i>
+                            </button>
+                        </div>
+                        <div class='js-search-bar-dropdown'></div>
+                    </form>
+                    <div class='hero__search-container__search-tags'>
+                        <ul class='hero__search-container__search-tags__tag-container'>
+                            <li class='hero__search-container__search-tags__tag-container__suggested'>
+                                推荐<span>:</span></li>
+                            <li>
+                                <ul>
+                                    <li class='hero__search-container__search-tags__tag-container__tag'>
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            在家工作
+                                        </a>
+                                    </li>
+                                    <li class='hero__search-container__search-tags__tag-container__tag' >
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            網路
+                                        </a>
+                                    </li>
+                                    <li class='hero__search-container__search-tags__tag-container__tag'>
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            浴室
+                                        </a>
+                                    </li>
+                                    <li class='hero__search-container__search-tags__tag-container__tag'>
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            運送
+                                        </a>
+                                    </li>
+                                    <li class='hero__search-container__search-tags__tag-container__tag'>
+                                        <a class='js-popular-search-tag sup_str' href="#" style="color:white;">
+                                            更多
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <div class='underlined-tabs underlined-tabs--large underlined-tabs--centered underlined-tabs--shadow'>
+            <a class="underlined-tabs__tab underlined-tabs__tab--active" href="/zh-cn/">主页</a>
+            <a class="underlined-tabs__tab" href="/zh-cn/discover/">发现</a>
+            <a class="underlined-tabs__tab" href="/zh-cn/videos/">视频</a>
+            <a class="underlined-tabs__tab " href="/zh-cn/leaderboard/">热门作者排行榜</a>
+            <a class="underlined-tabs__tab" href="/zh-cn/challenges/">挑战赛</a>
+        </div>
+
+        <div class='l-container home-page'>
+            <div class='title-tabs'>
+                <div class='js-home-links-title title-tabs__title'>素材图片</div>
+                <div class='rd__dropdown'>
+                    <div class='rd__button rd__button--text-primary rd__button--compact rd__button--with-icon rd__button--no-right-padding'>
+                        <span class='js-home-link-active-text'>人气</span>
+                        <i class='rd__svg-icon'>
+                            <img src="{% static 'img/picture/down.png' %}">
+                        </i>
+                    </div>
+                    <div class='rd__dropdown__container'>
+                        <div class='rd__dropdown__container__content'>
+                            <div class='rd__dropdown__container__content__pointer'></div>
+                            <ul class='rd__dropdown__container__content__items'>
+                                <li role='option'>
+                                    <a class='js-home-link js-home-trending' href='/zh-cn/'>人气</a>
+                                </li>
+                                <li role='option'>
+                                    <a class='js-home-link js-home-new' href='/zh-cn/new-photos/'>最新</a>
+                                </li>
+{#                                <li class='when-signed-in' role='option'>#}
+{#                                    <a class='js-home-link js-home-following' href='/zh-cn/following/'>已关注</a>#}
+{#                                </li>#}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='photos'>
+{#                <div class='photos__column'>#}
+                <ul id="waterfall" style="width: 950px"></ul>
+{#                </div>#}
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{#不继承侧边跳链#}
+{% block jump %}
+{% endblock %}

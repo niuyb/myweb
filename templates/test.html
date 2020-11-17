@@ -1,0 +1,66 @@
+{% extends 'web_base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+{#    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}?version=0.0.0.2">#}
+{#    <link rel="stylesheet" href="{% static 'css/home/water_fall.css' %}?version=0.0.0.2">#}
+    <link rel="stylesheet" href="{% static 'css/common/message_box.css' %}?version=0.0.0.2">
+    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}?version=0.0.1.1">
+    <link rel="stylesheet" href="{% static 'css/element-ui@2.13.1/lib/theme-chalk/index.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}?version=0.0.1"></script>
+    <script type="text/javascript" src="{% static 'js/npm/element-ui@2.13.1/lib/index.js' %}?version=0.0.2"></script>
+
+    {#    <script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/home/home.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/respond.min.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/json.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/home/waterfall.js' %}"></script>#}
+    <script type="text/javascript" src="{% static 'js/common/message_box.js' %}?version=0.0.6"></script>
+    <script type="text/javascript" src="{% static 'js/test.js' %}?version=0.0.6"></script>
+{% endblock %}
+
+{% block content %}
+
+
+{#不继承滚动轮播图#}
+{% block banner %}
+{% endblock %}
+
+{#		<div class="scroll-down">SCROLL DOWN</div>#}
+{#		<div class="container"></div>#}
+		<div class="modal is-open">
+            <div class="modal-container">
+                <div class="modal-left">
+                    <h1 class="modal-title">Welcome!</h1>
+                    <p class="modal-desc">一款响应式浅紫色办公风格的登录对话框</p>
+                    <div class="input-block">
+                        <label for="email" class="input-label">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="input-block">
+                        <label for="password" class="input-label">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="modal-buttons">
+                        <a href="" class="">Forgot your password?</a>
+                        <button class="input-button">Login</button>
+                    </div>
+                    <p class="sign-up">Don't have an account? <a href="#">Sign up now</a>
+                    </p>
+                </div>
+{#                <div class="modal-right">#}
+{#                    <img src="/uploads/1901/desk.jpg" alt="">#}
+{#                </div>#}
+                <button class="icon-button close-button">
+                </button>
+            </div>
+{#            <button class="modal-button">Click here to login</button>#}
+        </div>
+
+{% endblock %}

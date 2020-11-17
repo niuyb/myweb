@@ -1,0 +1,207 @@
+{% extends 'web_base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/home/home_css.css' %}?version=0.0.0.6">
+    <link rel="stylesheet" href="{% static 'css/life/life_page.css' %}?version=0.0.2.5">
+    {#    <link rel="stylesheet" href="{% static 'css/element-ui@2.13.1/lib/theme-chalk/index.css' %}">#}
+
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+{#    <script type="text/javascript" src="{% static 'js/npm/vue@2.6.11' %}?version=0.0.4"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/json.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>#}
+    <script type="text/javascript" src="{% static 'js/life/life.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'js/npm/element-ui@2.13.1/lib/index.js' %}?version=0.0.2"></script>#}
+
+
+{% endblock %}
+
+{#不继承滚动轮播图#}
+{% block banner %}
+{% endblock %}
+
+
+{% block body %}
+    <div class="life_body">
+    <header class="life_header">
+        <h1>The Envato Tuts+ Report</h1>
+        <h2><a href="https://webdesign.tutsplus.com/tutorials/how-to-build-a-news-website-layout-with-flexbox--cms-26611">Read tutorial</a></h2>
+    </header>
+
+    <main class="main columns">
+        <section class="column main-column">
+            <a class="article first-article" href="#">
+                <figure class="article-image is-4by3">
+                    <img src="/uploads/160501/image-01-lo.jpg" alt="">
+                </figure>
+                <div class="article-body">
+                    <h2 class="article-title">
+              Hello World
+            </h2>
+                    <p class="article-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare
+                        magna eros.
+                    </p>
+                    <footer class="article-info">
+                        <span>By Joe Smith</span>
+                        <span>42 comments</span>
+                    </footer>
+                </div>
+            </a>
+
+            <div class="columns">
+                <div class="column nested-column">
+                    <a class="article" href="#">
+                        <figure class="article-image is-16by9">
+                            <img src="/uploads/160501/image-02-lo.jpg" alt="">
+                        </figure>
+                        <div class="article-body">
+                            <h2 class="article-title">
+                  Hello World
+                </h2>
+                            <p class="article-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare
+                                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                            </p>
+                            <footer class="article-info">
+                                <span>By Joe Smith</span>
+                                <span>42 comments</span>
+                            </footer>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="column">
+                    <a class="article" href="#">
+                        <figure class="article-image is-16by9">
+                            <img src="/uploads/160501/image-03-lo.jpg" alt="">
+                        </figure>
+                        <div class="article-body">
+                            <h2 class="article-title">
+                  Hello World
+                </h2>
+                            <p class="article-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                            <footer class="article-info">
+                                <span>By Joe Smith</span>
+                                <span>42 comments</span>
+                            </footer>
+                        </div>
+                    </a>
+                    <a class="article" href="#">
+                        <div class="article-body">
+                            <h2 class="article-title">
+                  Hello World
+                </h2>
+                            <p class="article-content">
+                                Lorem ipsum dolor sit amet.
+                            </p>
+                            <footer class="article-info">
+                                <span>By Joe Smith</span>
+                                <span>42 comments</span>
+                            </footer>
+                        </div>
+                    </a>
+                    <a class="article" href="#">
+                        <div class="article-body">
+                            <h2 class="article-title">
+                  Hello World
+                </h2>
+                            <p class="article-content">
+                                Lorem ipsum dolor sit amet feugiat facilisis.
+                            </p>
+                            <footer class="article-info">
+                                <span>By Joe Smith</span>
+                                <span>42 comments</span>
+                            </footer>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="column">
+            <a class="article" href="#">
+                <figure class="article-image is-3by2">
+                    <img src="/uploads/160501/image-04-lo.jpg" alt="">
+                </figure>
+                <div class="article-body">
+                    <h2 class="article-title">
+              Hello World
+            </h2>
+                    <p class="article-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <footer class="article-info">
+                        <span>By Joe Smith</span>
+                        <span>42 comments</span>
+                    </footer>
+                </div>
+            </a>
+            <a class="article" href="#">
+                <div class="article-body">
+                    <h2 class="article-title">
+              Hello World
+            </h2>
+                    <p class="article-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <footer class="article-info">
+                        <span>By Joe Smith</span>
+                        <span>42 comments</span>
+                    </footer>
+                </div>
+            </a>
+            <a class="article" href="#">
+                <div class="article-body">
+                    <h2 class="article-title">
+              Hello World
+            </h2>
+                    <p class="article-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <footer class="article-info">
+                        <span>By Joe Smith</span>
+                        <span>42 comments</span>
+                    </footer>
+                </div>
+            </a>
+            <a class="article" href="#">
+                <div class="article-body">
+                    <h2 class="article-title">
+              Hello World
+            </h2>
+                    <p class="article-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <footer class="article-info">
+                        <span>By Joe Smith</span>
+                        <span>42 comments</span>
+                    </footer>
+                </div>
+            </a>
+        </section>
+    </main>
+    </div>
+
+{% endblock %}
+
+
+{#不继承滚动轮播图#}
+{% block footer %}
+    {{ block.super }}
+{% endblock %}
+
+
+{#不继承侧边跳链#}
+{% block jump %}
+{% endblock %}
+
+
+
